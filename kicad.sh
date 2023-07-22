@@ -37,7 +37,7 @@ rm -rf ReplicateLayout
 
 pip install pyclipper --break-system-packages 
 
-if [[ $1 -eq '-l' ]]
+if [[ $1 == '-l' ]]
 then
         cp -r  /usr/share/kicad/plugins/teardrops ~/.local/share/kicad/6.0/scripting/plugins/teardrops
         cp -r /usr/share/kicad/plugins/ViaStitching ~/.local/share/kicad/6.0/scripting/plugins/ViaStitching
