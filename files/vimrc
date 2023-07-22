@@ -1,0 +1,73 @@
+"+-----------------------------------------------------------------------------+
+"| Misc                                                                        |
+"+-----------------------------------------------------------------------------+
+" adds line numbers
+set number
+
+" enable syntax highlight
+syntax on
+
+" use space instead of tabs
+set expandtab
+
+" inherit the indentation from previous lines
+set autoindent
+
+" avoid breaking line in the middle of the word
+set linebreak
+
+" set history length
+set history=200
+
+" auto completion after tab
+set wildmenu
+
+
+" disable line wrap
+set nowrap
+
+" set line at char 80
+set colorcolumn=81
+
+"+-----------------------------------------------------------------------------+
+"| Spell check                                                                 |
+"+-----------------------------------------------------------------------------+
+" set spell check
+setlocal spell
+" set spellfile
+set spellfile=~/.vim/vim_spellfile.utf-8.add
+
+"+----------------------------------------------------------------------------+
+"| Key Binds                                                                  |
+"+----------------------------------------------------------------------------+
+" CTRL-C to copy (visual mode)
+vmap <C-c> y
+
+" CTRL-X to cut (visual mode)
+vmap <C-x> x
+
+" ctrl V to paste (insert mode)
+imap <C-v> <esc>P
+
+" move to end using control
+imap <C-e> <end>
+vmap <C-e> <end>
+
+" move to begin using control
+imap <C-r> <home>
+vmap <C-r> <home>
+
+" move to end of next line
+imap <C-d> <down><end>
+vmap <C-d> <down><end>
+
+" move to begin of next line
+imap <C-f> <down><home>
+vmap <C-f> <down><home>
+
+" select line 
+vmap <C-Down> <down><end>
+
+" :W sudo saves the file
+" (useful for handling the permission-denied error)
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!

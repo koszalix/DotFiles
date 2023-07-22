@@ -1,0 +1,11 @@
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -lA'
+alias rmr='rm -rf'
+alias gr='grep'
+alias tm='tmux'
+alias ansible='python3 -m ansible'
+alias rst='sudo systemctl restart'
+alias stat='sudo systemctl status'
+alias cb='flatpak run app.getclipboard.Clipboard'
+

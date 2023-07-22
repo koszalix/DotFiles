@@ -1,0 +1,43 @@
+# Debian graphical enviroment does not load .profile file, instead .xsessniorc is used 
+# This file combain an default snap `.profile` file and default debian user profile file
+
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+# shellcheck shell=sh
+
+# Expand $PATH to include the directory where snappy applications go.
+snap_bin_path="/snap/bin"
+if [ -n "${PATH##*${snap_bin_path}}" ] && [ -n "${PATH##*${snap_bin_path}:*}" ]; then
+    export PATH="$PATH:${snap_bin_path}"
+fi
+
+# Ensure base distro defaults xdg path are set if nothing filed up some
+# defaults yet.
+if [ -z "$XDG_DATA_DIRS" ]; then
+    export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+fi
+
+# Desktop files (used by desktop environments within both X11 and Wayland) are
+# looked for in XDG_DATA_DIRS; make sure it includes the relevant directory for
+# snappy applications' desktop files.
+snap_xdg_path="/var/lib/snapd/desktop"
+if [ -n "${XDG_DATA_DIRS##*${snap_xdg_path}}" ] && [ -n "${XDG_DATA_DIRS##*${snap_xdg_path}:*}" ]; then
+    export XDG_DATA_DIRS="${XDG_DATA_DIRS}:${snap_xdg_path}"
+fi
+
