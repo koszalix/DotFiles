@@ -34,5 +34,6 @@ sudo apt install freecad -y
 sudo apt install inkspace -y
 sudo apt install wine
 sudo apt install printer-driver-all -y
+sudo apt install octave -y
 
 sudo gem install mdless 
