@@ -11,3 +11,5 @@ then
         mv ~/.bashrc ~/.bashrc.bak
         cp files/bashrc ~/.bashrc
 fi
+source $HOME/.bashrc
+source $HOME/.bash_aliases
