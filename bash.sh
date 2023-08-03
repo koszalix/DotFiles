@@ -3,7 +3,7 @@
 if [[ -e ~/.bash_aliases ]]
 then	
 	mv ~/.bash_aliases ~/.bash_aliases.bak
-        cp files/bash_aliases ~/.bash_aliases.new
+        cp files/bash_aliases ~/.bash_aliases
 fi
 
 if [[ -e ~/.bashrc ]]
