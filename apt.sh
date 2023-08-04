@@ -35,5 +35,9 @@ sudo apt install inkspace -y
 sudo apt install wine
 sudo apt install printer-driver-all -y
 sudo apt install octave -y
+sudo apt install sane -y 
+sudo apt install libsane -y
+sudo apt install hplib -y
+sudo apt install hplib-gui -y
 
 sudo gem install mdless 
