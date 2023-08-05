@@ -68,6 +68,9 @@ vmap <C-f> <down><home>
 " select line 
 vmap <C-Down> <down><end>
 
+" disable spell
+imap <C-s> spell
+
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
