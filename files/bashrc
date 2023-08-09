@@ -95,4 +95,3 @@ if ! shopt -oq posix; then
   fi
 fi
 
-flatpak run app.getclipboard.Clipboard
