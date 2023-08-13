@@ -5,3 +5,4 @@ pdfrw
 
 ansible
 tasmotizer
+gpt-command-line

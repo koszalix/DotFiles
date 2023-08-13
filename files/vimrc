@@ -19,15 +19,18 @@ set linebreak
 " set history length
 set history=200
 
-" auto completion after tab
+" auto    completion after tab
 set wildmenu
 
 
 " disable line wrap
 set nowrap
 
-" set line at char 80
+" set line at char 81
 set colorcolumn=81
+
+"modified flag
+set statusline+=%m 
 
 "+-----------------------------------------------------------------------------+
 "| Spell check                                                                 |
@@ -68,9 +71,15 @@ vmap <C-f> <down><home>
 " select line 
 vmap <C-Down> <down><end>
 
-" disable spell
-imap <C-s> spell
+" enable spell
+imap <C-s> :setlocal spell
+vmap <C-s> :setlocal spell
+imap <C-o> :setlocal nospell
+vmap <C-o> :setlocal nospell
+
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+
+
