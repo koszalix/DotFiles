@@ -39,5 +39,6 @@ sudo apt install sane -y
 sudo apt install libsane -y
 sudo apt install hplib -y
 sudo apt install hplib-gui -y
+sudo apt install w3m-img -y 
 
 sudo gem install mdless 
