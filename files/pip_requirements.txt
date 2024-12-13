@@ -1,8 +1,0 @@
-matplotlib
-scipy
-numpy
-pdfrw
-
-ansible
-tasmotizer
-gpt-command-line
